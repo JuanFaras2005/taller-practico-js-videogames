@@ -4,11 +4,11 @@ const btnUp = document.querySelector('#up');
 const btnLeft = document.querySelector('#left');
 const btnRight = document.querySelector('#right');
 const btnDown = document.querySelector('#down');
-const spanLives = document.querySelector('#lives')
-const spanTime = document.querySelector('#time')
-const spanRecord = document.querySelector('#record')
-const pResult = document.querySelector('#result')
-
+const spanLives = document.querySelector('#lives');
+const spanTime = document.querySelector('#time');
+const spanRecord = document.querySelector('#record');
+const pResult = document.querySelector('#result');
+const btnReset = document.querySelector('#reset');
 
 
 let  canvasSize;
@@ -178,6 +178,10 @@ window.addEventListener('resize', setCanvasSize,);
         console.log({recordTime, playerTime});
     }
 
+    function resetGame() {
+        location.reload();
+    }
+
     function showLives() {
         const heartArray = Array(lives).fill(emojis['HEART']) // [1,2,3]
         // console.log(heartArray);
@@ -200,7 +204,9 @@ window.addEventListener('resize', setCanvasSize,);
     btnLeft.addEventListener('click', moveLeft);
     btnRight.addEventListener('click', moveRight);
     btnDown.addEventListener('click', moveDown);
+    btnReset.addEventListener('click', resetGame);
 
+ 
     function moveByKeys(event) {
         if (event.key == 'ArrowUp') moveUp();
         else if (event.key == 'ArrowLeft') moveLeft();

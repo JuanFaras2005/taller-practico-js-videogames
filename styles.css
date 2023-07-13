@@ -42,6 +42,11 @@ button:not(:last-child) {
   margin-right: 10px;
 }
 
+#reset {
+  margin-top: 10px;
+}
+
+
 .messages {
   display: flex;
   flex-wrap: wrap;
